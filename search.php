@@ -1,5 +1,10 @@
 <?php
-    
+    if(isset($_GET['search']))
+    {
+        $search=htmlspecialchars($_GET['search']);
+    }else{
+        $search="";
+    }
 
 ?>
 <!DOCTYPE html>
@@ -14,9 +19,33 @@
     <h1>Search Page</h1>
     <form action="search.php" method="GET">
         <div>
-            <input type="text" name="search" id="search" value="">
+            <input type="text" name="search" id="search" value="<?= $search ?>">
             <input type="submit" value="Rechercher">
         </div>
-    </form>    
+    </form>   
+
+    <?php 
+        if(!empty($search))
+        {
+            echo "<h3>Résultat pour la recherche</h3>";
+            require "connexion.php";
+            $req = $bdd->prepare("SELECT * FROM products WHERE title LIKE :inco");
+            $req->execute([
+                ":inco"=>"%".$search."%"
+            ]);
+            $total = $req->rowCount();
+            if($total==0){
+                echo "aucun résultat";
+            }else{
+                while($don = $req->fetch())
+                {
+                    echo "<div><a href='product.php?id=".$don['id']."'>".$don['title']."</a></div>";
+                }
+            }
+            $req->closeCursor();
+        }
+    ?>
+    
+    
 </body>
 </html>
