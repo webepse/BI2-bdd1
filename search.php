@@ -29,7 +29,7 @@
         {
             echo "<h3>Résultat pour la recherche</h3>";
             require "connexion.php";
-            $req = $bdd->prepare("SELECT * FROM products WHERE title LIKE :inco");
+            $req = $bdd->prepare("SELECT * FROM products WHERE title LIKE :inco OR description LIKE :inco");
             $req->execute([
                 ":inco"=>"%".$search."%"
             ]);
