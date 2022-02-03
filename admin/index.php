@@ -2,6 +2,11 @@
     session_start();
     require "../connexion.php";
 
+    if(isset($_SESSION['login']))
+    {
+        header("LOCATION:dashboard.php");
+    }
+
 
     if(isset($_POST['login']))
     {
@@ -25,6 +30,12 @@
                 $error="Votre login ne correspond pas";
             }
         }
+    }
+
+    if(isset($_GET['deco']))
+    {
+        session_destroy();
+        header("LOCATION:index.php");
     }
     
 ?>

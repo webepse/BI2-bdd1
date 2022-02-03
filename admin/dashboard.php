@@ -4,9 +4,7 @@
     {
         header("LOCATION:index.php");
     }
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,5 +15,6 @@
 </head>
 <body>
     <h1>Administration</h1>
+    <a href="index.php?deco=ok">Déconnexion</a>
 </body>
 </html>
