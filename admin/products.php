@@ -17,7 +17,7 @@
 <body>
     <?php include("partials/header.php") ?>
 
-    <h1>Administration</h1>
+    <h1>Produits</h1>
 
 </body>
 </html>

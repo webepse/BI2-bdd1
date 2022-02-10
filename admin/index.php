@@ -15,6 +15,11 @@
             $error="Veuillez remplir correctement le formulaire";
         }else{
             $login = htmlspecialchars($_POST['login']);
+            // $req = $bdd->prepare("SELECT * FROM member WHERE login=:login");
+            // 
+            // $req->execute([
+            //     ":login" => $login
+            // ]);
             $req = $bdd->prepare("SELECT * FROM member WHERE login=?");
             $req->execute([$login]);
             if($don = $req->fetch())
