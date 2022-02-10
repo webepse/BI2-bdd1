@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : jeu. 20 jan. 2022 à 14:50
+-- Généré le : jeu. 10 fév. 2022 à 12:55
 -- Version du serveur :  5.7.31
 -- Version de PHP : 7.3.21
 
@@ -22,6 +22,27 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `store` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE `store`;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `member`
+--
+
+DROP TABLE IF EXISTS `member`;
+CREATE TABLE IF NOT EXISTS `member` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `member`
+--
+
+INSERT INTO `member` (`id`, `login`, `password`) VALUES
+(1, 'admin', '$2y$10$jtz0/UyRVNoJVAlcvgrvnurEKJ0.UuzkszAa3Ln4iYaipol0XToqO');
 
 -- --------------------------------------------------------
 

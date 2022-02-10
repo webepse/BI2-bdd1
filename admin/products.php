@@ -16,8 +16,45 @@
 </head>
 <body>
     <?php include("partials/header.php") ?>
+    <main>
+        <div class="container-fluid">
+            <h1>Produits</h1>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>N°</th>
+                        <th>Titre</th>
+                        <th>Date</th>
+                        <th>Prix</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                        require "../connexion.php";
+                        $req = $bdd->query("SELECT * FROM products");
+                        while($don = $req->fetch())
+                        {
+                            echo "<tr>";
+                                echo "<td>".$don['id']."</td>";
+                                echo "<td>".$don['title']."</td>";
+                                echo "<td>".$don['date']."</td>";
+                                echo "<td>".$don['price']."€</td>";
+                                echo "<td>";
+                                    echo "<a href='productUpdate.php' class='btn btn-warning mx-2'>Modifier</a>";
+                                    echo "<a href='productDelete.php' class='btn btn-danger mx-2'>Supprimer</a>";
+                                echo "</td>";
+                            echo "</tr>";
+                        }
+                        $req->closeCursor();
+                    ?>
+                </tbody>
+            </table>
 
-    <h1>Produits</h1>
+        </div>
+    </main>
+
+
 
 </body>
 </html>
