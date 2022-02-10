@@ -15,10 +15,12 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- inclure la partie header sur chaque fichier où j'ai besoin de cette navigation -->
     <?php include("partials/header.php") ?>
+    <main>
+        <div class="container">
+            <h1>Ajouter un produit</h1>
 
-    <h1>Administration</h1>
-
+        </div>
+    </main>
 </body>
 </html>

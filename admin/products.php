@@ -1,5 +1,6 @@
 <?php
     session_start();
+    // système de proctection 
     if(!isset($_SESSION['login']))
     {
         header("LOCATION:index.php");
@@ -17,8 +18,9 @@
 <body>
     <?php include("partials/header.php") ?>
     <main>
-        <div class="container-fluid">
+        <div class="container">
             <h1>Produits</h1>
+            <a href="productAdd.php" class="btn btn-primary">Ajouter</a>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -31,8 +33,11 @@
                 </thead>
                 <tbody>
                     <?php
+                        // aller chercher la base de données
                         require "../connexion.php";
+                        // req à la bdd en mode query car on n'a pas d'inconnue
                         $req = $bdd->query("SELECT * FROM products");
+                        // boucle tant que car il y a plusieurs réponse à recup 
                         while($don = $req->fetch())
                         {
                             echo "<tr>";
@@ -46,6 +51,7 @@
                                 echo "</td>";
                             echo "</tr>";
                         }
+                        // fermer la req
                         $req->closeCursor();
                     ?>
                 </tbody>
