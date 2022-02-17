@@ -33,6 +33,12 @@
                         echo "<div class='alert alert-warning'>Vous avez bien modifié le produit n°".$_GET['id']."</div>";
                     }
                 }
+                if(isset($_GET['delete']))
+                {
+                    if($_GET['delete']=="success"){
+                        echo "<div class='alert alert-danger'>Vous avez bien supprimé le produit n°".$_GET['id']."</div>";
+                    }
+                }
             ?>
             <a href="productAdd.php" class="btn btn-primary">Ajouter</a>
             <table class="table table-hover">

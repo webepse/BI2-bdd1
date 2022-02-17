@@ -51,7 +51,7 @@
                 <?= nl2br($don['description']) ?>
             </div>
             <h3>Voulez-vous supprimer le produit</h3>
-            <a href="productDelete?delete=ok&id=<?= $don['id'] ?>" class="btn btn-danger m-3">oui</a>
+            <a href="productDelete.php?delete=ok&id=<?= $don['id'] ?>" class="btn btn-danger m-3">oui</a>
             <a href="products.php" class="btn btn-secondary m-3">non</a>
         </div>
     </main>
