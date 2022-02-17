@@ -69,7 +69,7 @@
         // vérifier si le formulaire été bon ou non
         if($err == 0)
         {
-            // insertion dans la base de données
+            // update dans la base de données
             require "../connexion.php";
         
             $update = $bdd->prepare("UPDATE products SET title=:titre, description=:descri, date=:dat,price=:prix WHERE id=:myid");

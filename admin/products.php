@@ -61,7 +61,7 @@
                                 echo "<td>".$don['price']."€</td>";
                                 echo "<td>";
                                     echo "<a href='productUpdate.php?id=".$don['id']."' class='btn btn-warning mx-2'>Modifier</a>";
-                                    echo "<a href='productDelete.php' class='btn btn-danger mx-2'>Supprimer</a>";
+                                    echo "<a href='productDelete.php?id=".$don['id']."' class='btn btn-danger mx-2'>Supprimer</a>";
                                 echo "</td>";
                             echo "</tr>";
                         }
