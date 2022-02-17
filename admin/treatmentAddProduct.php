@@ -5,7 +5,6 @@
      {
          header("LOCATION:index.php");
      }
-
      // vérif si le formulaire a été envoyé ou non
      if(isset($_POST['title'])){
         // vérifier toutes les valeurs envoyée avant d'insèrer dans la bdd
@@ -48,7 +47,6 @@
                 $err=5;
             }
         }
-
         // vérifier si le formulaire été bon ou non
         if($err == 0)
         {
@@ -70,12 +68,6 @@
             // il y a eu au moins une erreur
             header("LOCATION:productAdd.php?err=".$err);
         }
-
-
-
-
-
-
      }else{
          // si pas de formulaire envoyé
          header("LOCATION:productAdd.php"); 

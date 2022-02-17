@@ -41,6 +41,11 @@
                     <input type="submit" value="Enregistrer" class="btn btn-success">
                 </div>
             </form>
+            <?php 
+                if(isset($_GET['err'])){
+                    echo "<div class='alert alert-danger'>Un problème est survenu</div>";
+                }
+            ?>
         </div>
     </main>
 </body>

@@ -20,6 +20,14 @@
     <main>
         <div class="container">
             <h1>Produits</h1>
+            <?php
+                if(isset($_GET['add']))
+                {
+                    if($_GET['add']=="success"){
+                        echo "<div class='alert alert-success'>Vous avez bien ajouté un produit</div>";
+                    }
+                }
+            ?>
             <a href="productAdd.php" class="btn btn-primary">Ajouter</a>
             <table class="table table-hover">
                 <thead>
