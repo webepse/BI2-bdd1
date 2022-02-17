@@ -13,6 +13,17 @@
         header("LOCATION:products.php");
     }
 
+        // aller demander à la base de données les info de l'id demandé
+        require "../connexion.php";
+        $req = $bdd->prepare("SELECT * FROM products WHERE id=?");
+        $req->execute([$id]);
+        // tester si j'ai l'id dans ma bdd
+        if(!$don = $req->fetch()){
+            $req->closeCursor();
+            header("LOCATION:products.php");
+        }
+        $req->closeCursor();
+
      // vérif si le formulaire a été envoyé ou non
      if(isset($_POST['title'])){
         // vérifier toutes les valeurs envoyée avant d'insèrer dans la bdd
